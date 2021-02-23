@@ -66,9 +66,9 @@ function printQuote () {
 }
 
 
-//this functions creates a reference to the button and stores it inside the variable btn.
+//this functions creates a reference to the button and stores it inside the variable btn. (source for background changing colour: https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Events)
 const btn = document.querySelector('button');
-//This function creates a random number, needed to create a random color. 
+//This function creates a random number, needed to create a random color.
 function random(number) {
   return Math.floor(Math.random() * (number+1));
 }
