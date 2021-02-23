@@ -73,9 +73,9 @@ function random(number) {
 }
 
 // changes queote each 5 seconds
-let intervalChangeQuote = setInterval(printQuote, 5000);
+let intervalChangeQuote = setInterval(printQuote, 10000);
 // changes background color each 5 seconds
-let intervalChangeColor = setInterval(randomColor, 5000);
+let intervalChangeColor = setInterval(randomColor, 10000);
 
 
 // calls function everytime the button is clicked.
