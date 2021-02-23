@@ -3,9 +3,10 @@ Treehouse FSJS Techdegree:
 A Random Quote Generator
 ******************************************/
 
-// In the variable quotes you'll find a multidimensional array .
-// Each array holds at least an "quote" and "actor" property.
-// Additional an array can contain an "episode" or "year" property.
+/*  In the variable quotes you'll find a multidimensional array .
+    Each array holds at least an "quote" and "actor" property.
+    Additional an array can contain an "episode" or "year" property.
+*/
 let quotes = [
   {quote:'Whenever I’m sad, I stop being sad and be awesome instead.' ,
   actor: 'Barney Stinson',
@@ -46,8 +47,8 @@ function getRandomQuote(array) {
 
 
 
-// This function  prints a quote and a actor property with every quote.
-// Where applicable the function prints properties episode and year.
+/*  This function  prints a quote and a actor property with every quote.
+    Where applicable the function prints properties episode and year. */
 function printQuote () {
   let htmlQuote = getRandomQuote(quotes)   // calls randomQuote and puts it in a variable.
   let htmlString = `
