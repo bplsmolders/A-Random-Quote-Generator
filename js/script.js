@@ -58,41 +58,38 @@ function printQuote () {
   if (htmlQuote.citation !== undefined ){
   htmlString += `
     <span class="citation">${htmlQuote.citation}</span>`
-  } // adds a citation property with text to htmlString if applicable.
+  }
   if (htmlQuote.year !== undefined ){
   htmlString += `
     <span class="citation">${htmlQuote.year}</span>`;
-  } // adds a year property with text to htmlString if applicable
+  }
   if (htmlQuote.tag !== undefined ){
   htmlString += `
     <span class="citation">${htmlQuote.tag}</span>`;
-  } // adds a tag property with text to htmlString if applicable
+  } // Each if statement adds text to htmlString individually when the property year, tag or citation is not empty.
   htmlString += `</p>`; // completes the htmlString by concatenating a closing </p> tag to htmlString.
   return document.getElementById('quote-box').innerHTML = htmlString; //returns the full htmlString displaying a random quote.
 }
 
 
-//this functions creates a reference to the button and stores it inside the variable btn. (source for background changing colour: https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Events)
-const btn = document.querySelector('button');
 //This function creates a random number, needed to create a random color.
 function random(number) {
   return Math.floor(Math.random() * (number+1));
 }
-
-// changes queote each 5 seconds
-let intervalChangeQuote = setInterval(printQuote, 10000);
-// changes background color each 5 seconds
-let intervalChangeColor = setInterval(randomColor, 10000);
-
-
-// calls function everytime the button is clicked.
-btn.onclick = randomColor();
-// Function calls the random color and replaces the background color.
+// Function creates a random color and replaces the background color.
 function randomColor() {
   const rndCol = 'rgb(' + random(255) + ',' + random(255) + ',' + random(255) + ')';
   document.body.style.backgroundColor = rndCol;
 }
 
 
+// changes quote every 10 seconds
+let intervalChangeQuote = setInterval(printQuote, 10000);
+// changes background color every 10 seconds
+let intervalChangeColor = setInterval(randomColor, 10000);
+
+
 // This code calls the printQuote function each time the user clicks the button "show another quote".
 document.getElementById('load-quote').addEventListener("click", printQuote, false);
+// This code calls the randomColor function each time the user clicks the button "show another quote".
+document.getElementById('load-quote').addEventListener("click", randomColor, false);
