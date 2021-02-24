@@ -10,29 +10,32 @@ A Random Quote Generator
 let quotes = [
   {quote:'Whenever I’m sad, I stop being sad and be awesome instead.' ,
   source: 'Barney Stinson',
-  citation: 'Season 1, citation 3',
+  citation: 'Season 1, episode 3',
   year: 2005 },
   {quote:'It’s just, eventually we’re all gonna move on. It’s called growing up.' ,
   source: 'Lily Aldrin',
-  citation: 'Season 5, citation 9',
+  citation: 'Season 5, episode 9',
   year: 2010 },
   {quote:'The future is scary, but you can’t just run back to the past because it’s familiar. Yes it’s tempting, but it’s a mistake.' ,
   source: 'Robin Scherbatsky',
-  citation: 'Season 2, citation 17',
-  year: 2006},
+  citation: 'Season 2, episode 17',
+  year: 2006,
+  tag:'romance'},
   {quote:'That cake. Best cake I ever had. Seriously, my stomach was like, ‘Hey bro, I don’t know what you’re eating cause I don’t have any eyes but it’s basically awesome, so keep sending it down Gullet Alley.' ,
   source: 'Marshall Eriksen',
-  citation: 'Season 7, citation 1',
-  year: 2012},
+  citation: 'Season 7, episode 1',
+  year: 2012,
+  tag:'food'},
   {quote:'I realized that I’m searching, searching for what I really want in life. And you know what? I have absolutely no idea what that is.' ,
   source: 'Barney Stinson',
-  citation: 'Season 9, citation 1'},
+  citation: 'Season 9, episode 1'},
   {quote:'We struggle so hard to hold on to these things that we know are gonna disappear eventually. And that’s really noble.' ,
   source: 'Lily Aldrin',
-  year: 2006},
+  year: 2006,
+  tag:'romance'},
   {quote:'Because sometimes even if you know how something’s gonna end, that doesn’t mean you can’t enjoy the ride.' ,
   source: 'Ted Mosby',
-  citation: 'Season 4, citation 12'},
+  citation: 'Season 4, episode 12'},
   {quote:'A lie is just a great story that someone ruined with the truth.' ,
   source: 'Barney Stinson',
   year: 2009},
@@ -60,6 +63,10 @@ function printQuote () {
   htmlString += `
     <span class="citation">${htmlQuote.year}</span>`;
   } // adds a year property with text to htmlString if applicable
+  if (htmlQuote.tag !== undefined ){
+  htmlString += `
+    <span class="citation">${htmlQuote.tag}</span>`;
+  } // adds a tag property with text to htmlString if applicable
   htmlString += `</p>`; // completes the htmlString by concatenating a closing </p> tag to htmlString.
   return document.getElementById('quote-box').innerHTML = htmlString; //returns the full htmlString displaying a random quote.
 }
